@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rb;
     [SerializeField] private float jumpForce;
     private Vector2 jump;
-    private bool isGrounded;
+    [SerializeField] private bool isGrounded;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,7 +39,16 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
-            _rb.AddForce(jump * 4);
+            _rb.AddForce(jump * 20);
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isGrounded = true;
         }
     }
 }
