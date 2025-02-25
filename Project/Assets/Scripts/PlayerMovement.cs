@@ -1,14 +1,32 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+namespace Skills
+{
+    public static class DoubleJump
+    {
+        [SerializeField] public static bool available;
+    }
+
+    public static class Climb
+    {
+        [SerializeField] public static bool available;
+    }
+
+    public static class Dash
+    {
+        [SerializeField] public static bool available;
+    }
+}
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float velocity;
-    private Rigidbody2D _rb;
     [SerializeField] private float jumpForce;
-    private Vector2 jump;
     [SerializeField] private bool isGrounded;
-
+    private Rigidbody2D _rb;
+    private Vector2 jump;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
