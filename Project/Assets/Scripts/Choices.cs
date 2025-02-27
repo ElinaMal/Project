@@ -6,9 +6,20 @@ using System;
 
 namespace Protagonist
 {
-    public static class PlayerData
+    public static class PlayersData
     {
-        public static int deathCounter;
+        public static int totalDeathCounter;
+        public static int totalKillCounter;
+
+        public static void Death()
+        {
+            totalDeathCounter++;
+        }
+
+        public static void Kill()
+        {
+            totalKillCounter++;
+        }
     }
 
     public class Player
@@ -28,9 +39,9 @@ namespace Protagonist
             this.damage = damage;
         }
 
-        public void GetHurt()
+        public void GetHurt(float damage)
         {
-            health = health - 10;
+            health = health - damage;
         }
     }
 
@@ -61,22 +72,22 @@ namespace Protagonist
 
 namespace Weapons
 {
-    public static class FierceEdge
+    public class FierceEdge
     {
-        [SerializeField] public static float addedDamage;
-        [SerializeField] public static float cooldown;
+        public float addedDamage;
+        public float cooldown;
     }
 
-    public static class LightningOrb
+    public class LightningOrb
     {
-        [SerializeField] public static float addedDamage;
-        [SerializeField] public static float cooldown;
+        public float addedDamage;
+        public float cooldown;
     }
 
-    public static class Talons
+    public class Talons
     {
-        [SerializeField] public static float addedDamage;
-        [SerializeField] public static float cooldown;
+        public float addedDamage;
+        public float cooldown;
     }
 }
 
@@ -88,8 +99,11 @@ public class Choices : MonoBehaviour
         Silver silver = new Silver();
         Debug.Log("Hi " + silver.name);
 
-        Player myPlayer = new Golden();
-        Debug.Log(myPlayer.name + ", welcome");
+        Player golden = new Golden();
+        Debug.Log(golden.name + ", welcome");
+
+        golden.GetHurt(34);
+        Debug.Log(golden.health);
     }
 
     // Update is called once per frame

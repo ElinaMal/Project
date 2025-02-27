@@ -77,6 +77,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void HandleSprint(InputAction.CallbackContext ctx)
+    {
+        velocity = velocity + 10;
+        velocity = ctx.ReadValue<float>();
+    }
+
     public void HandleMovement(InputAction.CallbackContext ctx)
     {
         _moveAmount = ctx.ReadValue<Vector2>();
