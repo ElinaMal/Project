@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_MaxPlayerCount: 2
   m_AllowJoining: 1
   m_JoinBehavior: 1
@@ -304,7 +304,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -1680190386980627800, guid: 2e6f22c39a049de478c166cc81b96165, type: 3}
-  m_PlayerPrefab: {fileID: 8691608969986595707, guid: afa21de1e514bad4985869aecbd9fda2, type: 3}
+  m_PlayerPrefab: {fileID: 3866964211593248442, guid: afa21de1e514bad4985869aecbd9fda2, type: 3}
   m_SplitScreen: 1
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1

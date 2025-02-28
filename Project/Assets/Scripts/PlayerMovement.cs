@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         _rb.linearVelocityX = _moveAmount.x * velocity;
-
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
             velocity = 10;
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity = 5;
         }
-
+        
         /*
         if (Input.GetKey(KeyCode.A))
         {
@@ -75,12 +75,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
-    }
-
-    public void HandleSprint(InputAction.CallbackContext ctx)
-    {
-        velocity = velocity + 10;
-        velocity = ctx.ReadValue<float>();
     }
 
     public void HandleMovement(InputAction.CallbackContext ctx)
