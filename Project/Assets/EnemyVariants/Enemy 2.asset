@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c351ea1e08c7a748859a5f517c8cd11, type: 3}
-  m_Name: Wave 3
+  m_Script: {fileID: 11500000, guid: aff0601f50866e44188a3ac08357b3bb, type: 3}
+  m_Name: Enemy 2
   m_EditorClassIdentifier: 
-  enemyPreFab: {fileID: 0}
-  enemyCount: 10
-  enemySpeed: 6
-  enemyHealth: 25
-  enemyDamage: 5
+  health: 15
+  velocity: 2
+  damage: 10
+  defense: 2
+  prefab: {fileID: 4825751918121691860, guid: 9f817a74cc3823045803836433ea676d, type: 3}
