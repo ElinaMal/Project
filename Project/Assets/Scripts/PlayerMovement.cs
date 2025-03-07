@@ -30,12 +30,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _moveAmount;
     private Vector2 jump;
+
+    public AudioManager audioManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         jump = new Vector2(_rb.linearVelocityX, _rb.linearVelocityY = jumpForce);
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -87,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             _rb.AddForce(jump * 20);
+            audioManager.PlaySoundEffect(audioManager.jumpSound);
             isGrounded = false;
         }
     }
