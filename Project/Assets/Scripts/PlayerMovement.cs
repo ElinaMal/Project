@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        jump = new Vector2(_rb.linearVelocityX, _rb.linearVelocityY = jumpForce);
+        jump = new Vector3(_rb.linearVelocityX, _rb.linearVelocityY = jumpForce, 0);
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            _rb.AddForce(jump * 20);
+            _rb.AddForce(jump * 2, ForceMode2D.Impulse);
             audioManager.PlaySoundEffect(audioManager.jumpSound);
             isGrounded = false;
         }
